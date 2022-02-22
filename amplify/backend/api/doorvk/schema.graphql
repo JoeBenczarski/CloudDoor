@@ -1,0 +1,17 @@
+type UnlockRequests @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  serial_number: String!
+  request_user_id: String!
+  request_time: AWSDateTime!
+  approval_user_id: String
+  approval_time: AWSDateTime
+}
+
+type Doors @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  serial_number: String!
+  allowed_unlock_group: String!
+  allowed_unlock_time_start: AWSTime!
+  allowed_unlock_time_end: AWSTime!
+}
+ 

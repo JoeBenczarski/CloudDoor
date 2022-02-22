@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-doorvk-dev-190217-authRole",
+      "UnauthRoleArn": "arn:aws:iam::156118651283:role/amplify-doorvk-dev-190217-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::156118651283:role/amplify-doorvk-dev-190217-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-doorvk-dev-190217-deployment",
+      "UnauthRoleName": "amplify-doorvk-dev-190217-unauthRole",
+      "StackName": "amplify-doorvk-dev-190217",
+      "StackId": "arn:aws:cloudformation:us-east-2:156118651283:stack/amplify-doorvk-dev-190217/1200aa60-7d72-11ec-907f-0ab9d6cfae90",
+      "AmplifyAppId": "dy8wgu42dj0bm"
+    },
+    "categories": {
+      "auth": {
+        "doorvk": {}
+      }
+    }
+  }
+}

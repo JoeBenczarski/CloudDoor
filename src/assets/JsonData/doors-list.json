@@ -1,0 +1,17 @@
+[
+  {"id":1,"serial_number":"6WPmYi4jkWfh","allowed_unlock_group":"doorvk-auth-users","allowed_unlock_time_start":"06:00","allowed_unlock_time_end":"18:00"},
+  {"id":2,"serial_number":"9WPnYi3jgWfe","allowed_unlock_group":"doorvk-auth-admins","allowed_unlock_time_start":"06:00","allowed_unlock_time_end":"18:00"},
+  {"id":2,"serial_number":"9WPnYi3jgWfe","allowed_unlock_group":"doorvk-auth-admins","allowed_unlock_time_start":"06:00","allowed_unlock_time_end":"18:00"},
+  {"id":2,"serial_number":"9WPnYi3jgWfe","allowed_unlock_group":"doorvk-auth-admins","allowed_unlock_time_start":"06:00","allowed_unlock_time_end":"18:00"},
+  {"id":2,"serial_number":"9WPnYi3jgWfe","allowed_unlock_group":"doorvk-auth-admins","allowed_unlock_time_start":"06:00","allowed_unlock_time_end":"18:00"},
+  {"id":2,"serial_number":"9WPnYi3jgWfe","allowed_unlock_group":"doorvk-auth-admins","allowed_unlock_time_start":"06:00","allowed_unlock_time_end":"18:00"},
+  {"id":2,"serial_number":"9WPnYi3jgWfe","allowed_unlock_group":"doorvk-auth-admins","allowed_unlock_time_start":"06:00","allowed_unlock_time_end":"18:00"},
+  {"id":2,"serial_number":"9WPnYi3jgWfe","allowed_unlock_group":"doorvk-auth-admins","allowed_unlock_time_start":"06:00","allowed_unlock_time_end":"18:00"},
+  {"id":2,"serial_number":"9WPnYi3jgWfe","allowed_unlock_group":"doorvk-auth-admins","allowed_unlock_time_start":"06:00","allowed_unlock_time_end":"18:00"},
+  {"id":2,"serial_number":"9WPnYi3jgWfe","allowed_unlock_group":"doorvk-auth-admins","allowed_unlock_time_start":"06:00","allowed_unlock_time_end":"18:00"},
+  {"id":2,"serial_number":"9WPnYi3jgWfe","allowed_unlock_group":"doorvk-auth-admins","allowed_unlock_time_start":"06:00","allowed_unlock_time_end":"18:00"},
+  {"id":1,"serial_number":"9WPnYi3jgWfe","allowed_unlock_group":"doorvk-auth-admins","allowed_unlock_time_start":"06:00","allowed_unlock_time_end":"18:00"},
+  {"id":1,"serial_number":"9WPnYi3jgWfe","allowed_unlock_group":"doorvk-auth-admins","allowed_unlock_time_start":"06:00","allowed_unlock_time_end":"18:00"},
+  {"id":1,"serial_number":"9WPnYi3jgWfe","allowed_unlock_group":"doorvk-auth-admins","allowed_unlock_time_start":"06:00","allowed_unlock_time_end":"18:00"},
+  {"id":3,"serial_number":"9WPnYi3jgWfe","allowed_unlock_group":"doorvk-auth-admins","allowed_unlock_time_start":"06:00","allowed_unlock_time_end":"18:00"}
+]

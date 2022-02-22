@@ -4,11 +4,29 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import rootReducer from './redux/reducers'
+import './assets/boxicons-2.0.7/css/boxicons.min.css'
+import './assets/css/grid.css'
+import './assets/css/theme.css'
+import './assets/css/index.css'
+
+import Amplify from "aws-amplify";
+import awsExports from "./aws-exports";
+Amplify.configure(awsExports);
+
+const store = createStore(
+    rootReducer
+)
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <Provider store={store}>
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>,
+    </Provider>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
