@@ -1,35 +1,38 @@
 import React from 'react';
-import './App.css';
-import {AmplifyAuthenticator, AmplifySignIn, AmplifySignOut} from '@aws-amplify/ui-react';
+import { AmplifyAuthenticator, AmplifySignIn } from '@aws-amplify/ui-react';
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
-import {Container} from 'react-bootstrap'
-import AdminLayout from './components/adminlayout/AdminLayout'
+import { Container } from 'react-bootstrap'
 
-function renderSignedInAdmin(user) {
+import PrivilegedLayout from './components/layout/PrivilegedLayout';
+import NonPrivilegedLayout from './components/layout/NonPrivilegedLayout';
+
+import './App.css';
+import groupInfo from './../src/assets/JsonData/groups.json'
+
+function renderPrivilegedLayout(user) {
     return (
         <Container className="App">
-            <AdminLayout username="Admin" />
+            <PrivilegedLayout user={user} />
         </Container>
     );
 }
 
-function renderSignedInUser(user) {
+function renderNonPrivilegedLayout(user) {
+    const name = user.attributes.given_name;
     return (
-        <div className="App">
-            <h2>Scan a door to unlock it</h2>
-            <AmplifySignOut />
-        </div>
+        <Container className="App">
+            <NonPrivilegedLayout user={user} />
+        </Container>
     );
 }
-
+function isUserPrivileged(groups) {
+    let isUserPrivileged = (groups.includes(groupInfo.Admin["group-name"]) ||
+                            groups.includes(groupInfo.Approver["group-name"]));
+    return isUserPrivileged;
+}
 function renderSignedIn(user) {
-    const group_names = {
-        'admin': 'doorvk-auth-admins',
-        'user': 'doorvk-auth-users'
-    }
-    // the array of groups that the user belongs to
-    const group = user.signInUserSession.accessToken.payload["cognito:groups"][0];
-    return group === group_names.admin ?  renderSignedInAdmin(user) : renderSignedInUser(user);
+    const groups = user.signInUserSession.accessToken.payload["cognito:groups"];
+    return isUserPrivileged(groups) ?  renderPrivilegedLayout(user) : renderNonPrivilegedLayout(user);
 }
 
 function renderSignIn() {
@@ -40,8 +43,8 @@ function renderSignIn() {
                 slot="sign-in"
                 formFields={[
                     {
-                        type: "email",
-                        label: "Email Address *",
+                        type: "username",
+                        label: "Username *",
                         placeholder: "",
                         inputProps: { required: true, autocomplete: "username" },
                     },
@@ -71,8 +74,7 @@ export default function App() {
 
     if (authState === AuthState.SignedIn && user) {
         return renderSignedIn(user);
-    }
-    else {
+    } else {
         return renderSignIn();
     }
 }

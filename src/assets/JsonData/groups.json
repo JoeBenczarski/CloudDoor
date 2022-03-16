@@ -1,0 +1,11 @@
+{
+  "Admin": {
+    "group-name": "Administrators"
+  },
+  "Approver": {
+    "group-name": "Approvers"
+  },
+  "User": {
+    "group-name": "Requesters"
+  }
+}

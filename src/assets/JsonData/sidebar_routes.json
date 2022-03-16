@@ -5,18 +5,13 @@
         "icon": "bx bx-category-alt"
     },
     {
-        "display_name": "Request",
-        "route": "/requests",
+        "display_name": "Approve Requests",
+        "route": "/approveRequests",
         "icon": "bx bx-cart"
     },
     {
-        "display_name": "Doors",
-        "route": "/doors",
-        "icon": "bx bx-package"
-    },
-    {
-        "display_name": "Users",
-        "route": "/users",
-        "icon": "bx bx-user-pin"
+        "display_name": "Create Requests",
+        "route": "/createRequests",
+        "icon": "bx bx-cart"
     }
 ]

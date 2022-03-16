@@ -1,4 +1,5 @@
 [
-  {"id":1,"email":"joebenczarski@gmail.com","group":"doorvk-auth-admins"},
-  {"id":2,"email":"jbenczar@umich.edu","group":"doorvk-auth-users"}
+  { "id":1, "email":"joebenczarski@gmail.com", "group":"doorvk-auth-admins", "isSuspended":false },
+  { "id":2, "email":"jbenczar@umich.edu", "group":"doorvk-auth-users", "isSuspended":true },
+  { "id":3, "email":"aaa@bbb.com", "group":"doorvk-auth-users", "isSuspended":true }
 ]

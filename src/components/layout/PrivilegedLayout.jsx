@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 
-import './adminlayout.css'
+import './layout.css'
 
 import Sidebar from '../sidebar/Sidebar'
 import TopNav from '../topnav/TopNav'
@@ -12,10 +12,10 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import ThemeAction from '../../redux/actions/ThemeAction'
 
-const AdminLayout = (props) => {
-    const username = props.username;
+const PrivilegedLayout = (props) => {
     const themeReducer = useSelector(state => state.ThemeReducer)
     const dispatch = useDispatch()
+    const [user, setUser] = useState(props.user);
 
     useEffect(() => {
         const themeClass = localStorage.getItem('themeMode', 'theme-mode-light')
@@ -33,7 +33,7 @@ const AdminLayout = (props) => {
                 <div className={`layout ${themeReducer.mode} ${themeReducer.color}`}>
                     <Sidebar {...props}/>
                     <div className="layout__content">
-                        <TopNav username={username} />
+                        <TopNav username={user.attributes.given_name} />
                         <div className="layout__content-main">
                             <Routes/>
                         </div>
@@ -44,4 +44,4 @@ const AdminLayout = (props) => {
     )
 }
 
-export default AdminLayout
+export default PrivilegedLayout

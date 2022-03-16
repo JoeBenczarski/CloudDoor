@@ -1,19 +1,41 @@
 import React from 'react'
-
-import Table from '../components/table/Table'
+import BootstrapTable from 'react-bootstrap-table-next';
 
 import { DataStore } from '@aws-amplify/datastore';
 import { Doors } from '../models';
 
 //import doorList from '../assets/JsonData/doors-list.json'
 
-const doorTableHead = [
-    'Id',
-    'Serial Number',
-    'Allowed Group',
-    'Allowed Start',
-    'Allowed End'
+const doorColumns = [
+    {
+        dataField: 'id',
+        text: 'ID'
+    },
+    {
+        dataField: 'serial_number',
+        text: 'Serial Number'
+    },
+    {
+        dataField: 'allowed_unlock_group',
+        text: 'Allowed Group'
+    },
+    {
+        dataField: 'allowed_unlock_time_start',
+        text: 'Start'
+    },
+    {
+        dataField: 'allowed_unlock_time_end',
+        text: 'End'
+    }
 ]
+
+const doorRowEvents = {
+    onDoubleClick: (e, row, rowIndex) => {
+        console.log(e);
+        console.log(row);
+        console.log(rowIndex);
+    }
+}
 
 class DoorsPage extends React.Component {
     constructor(props) {
@@ -28,24 +50,6 @@ class DoorsPage extends React.Component {
         this.setState({doors: response});
     }
 
-    renderHead(item, index) {
-        return (
-            <th key={index}>{item}</th>
-        );
-    }
-
-    renderBody(item, index) {
-        return (
-            <tr key={index}>
-                <td>{item.id}</td>
-                <td>{item.serial_number}</td>
-                <td>{item.allowed_unlock_group}</td>
-                <td>{item.allowed_unlock_time_start}</td>
-                <td>{item.allowed_unlock_time_end}</td>
-            </tr>
-        );
-    }
-
     render() {
         return (
             <div>
@@ -54,12 +58,11 @@ class DoorsPage extends React.Component {
                     <div className="col-12">
                         <div className="card">
                             <div className="card__body">
-                                <Table
-                                    limit='1000'
-                                    headData={doorTableHead}
-                                    renderHead={(item, index) => this.renderHead(item, index)}
-                                    bodyData={this.state.doors}
-                                    renderBody={(item, index) => this.renderBody(item, index)}
+                                <BootstrapTable
+                                    keyField='id'
+                                    data={ this.state.doors }
+                                    columns={ doorColumns }
+                                    rowEvents={ doorRowEvents }
                                 />
                             </div>
                         </div>
